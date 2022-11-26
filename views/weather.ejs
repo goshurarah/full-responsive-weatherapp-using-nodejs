@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('component/headLinks') %>
+        <%- include('component/styles.ejs') %>
+            <%- include('component/weatherAppSlider1Styles') %>
+</head>
+
+<body>
+    <%- include('component/navbar') %>
+        <!-- main header start -->
+        <div class="container-fluid main_header">
+            <div class="row">
+                <div class="col-md-10 col-12 mx-auto">
+
+                    <div class="main_content">
+                        <form action="" class="temp_form">
+                            <input type="text" id="cityName" placeholder="Enter The City Name" autocomplete="off">
+                            <input type="submit" id="submit_Btn" value="Search">
+                        </form>
+                    </div>
+ 
+                    <div class="tempInfo">
+                        <div class="top_layer">
+                            <p id="day"></p>
+                            <p id="today_date"></p>
+                        </div>
+                        <div class="main_layer">
+                            <p id="city_name">Get output here</p>
+                            <div class="middle_layer data_hide">
+                                <p id="temp"><span id="temp_real_value">0</span><sup>0</sup>C</p>
+                                <p id="temp_status"><i class="fa fa-cloud" aria-hidden="true"></i></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- main header end -->
+        <%- include('component/footer') %>
+</body>
+<%- include('component/scriptSlider1Link') %>
+    <%- include('component/weatherMain') %>
+
+</html>

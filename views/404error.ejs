@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('component/headLinks') %>
+        <%- include('component/styles.ejs') %>
+            <%- include('component/weatherAppSlider2Styles') %>
+</head>
+
+<body>
+    <%- include('component/navbar') %>
+        <!-- main header start -->
+        <div class="container-fluid main_header">
+            <div class="row">
+                <div class="col-md-10 col-12 mx-auto">
+                    <div class="row">
+                        <!-- left side div -->
+                        <div class="col-md-6 col-12 main_header_left">
+
+
+                            <h1><span class="text-color"><%= message.span %></span> <%= message.p %></h1>
+                            <a href="/"><button>back to home!</button></a>
+
+                        </div>
+                        <!-- right side div -->
+                        <div class="col-md-6 col-12 main_header_right">
+
+                            <div id="slider-2" class="hcg-slider">
+                                <div class="hcg-slide-container">
+                                    <div class="hcg-slider-body">
+                                        <a class="hcg-slides animated" style="display:block">
+                                            <span class="hcg-slide-number">1/5</span>
+                                            <img src="https://html-generator.com/uploads/images/2022/08/06/86272P2U3EGJ86H.jpg"
+                                                alt="86272P2U3EGJ86H.jpg">
+                                            <span class="hcg-slide-text">86272P2U3EGJ86H.jpg</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main header end -->
+        <%- include('component/footer') %>
+</body>
+<%- include('component/scriptSlider2Link') %>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('component/headLinks') %>
+        <%- include('component/styles.ejs') %>
+        <%- include('component/weatherAppSlider3Styles') %>
+
+
+</head>
+
+<body>
+    <%- include('component/navbar') %>
+        <!-- main header start -->
+        <div class="container-fluid main_header">
+            <div class="row">
+                <div class="col-md-10 col-12 mx-auto">
+                    <div class="row">
+                        <!-- left side div -->
+                        <div class="col-md-6 col-12 main_header_right customMargin">
+
+                            <div id="hcg-slider-1" class="hcg-slider">
+                                <div class="hcg-slide-container">
+                                <div class="hcg-slider-body">
+                                    <a class="hcg-slides animated" style="display:flex">
+                                        <span class="hcg-slide-number">1/5</span>
+                                        <img src="https://html-generator.com/uploads/images/2022/11/26/717368LIW8YN4MF.jpeg" alt="717368LIW8YN4MF.jpeg">
+                                        <span class="hcg-slide-text">717368LIW8YN4MF.jpeg</span>
+                                    </a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- right side div -->
+                        <div class="col-md-6 col-12 main_header_left">
+
+                            <p>Welcome To My <span class="text-color">about page</span></p>
+                            <h1>i am a <span class="text-color">mern stack developer</span> and back-end web developer
+                            </h1>
+                            <a href="/"><button>BACK TO HOME!</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main header end -->
+        <%- include('component/footer') %>
+</body>
+<%- include('component/scriptSlider3Link') %>
+
+</html>

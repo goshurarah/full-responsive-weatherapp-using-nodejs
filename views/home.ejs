@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('component/headLinks') %>
+        <%- include('component/styles.ejs') %>
+            <%- include('component/weatherAppSlider1Styles') %>
+</head>
+
+<body>
+    <%- include('component/navbar') %>
+        <!-- main header start -->
+        <div class="container-fluid main_header">
+            <div class="row">
+                <div class="col-md-10 col-12 mx-auto">
+                    <div class="row">
+                        <!-- left side div -->
+                        <div class="col-md-6 col-12 main_header_left">
+
+                            <p>Welcome To My <span class="text-color">GoS Weather</span> App</p>
+                            <h1>GET THE LATEST <span class="text-color">WEATHER INFORMATION</span> OF YOUR CITY</h1>
+                            <a href="/weather"><button>CHECK NOW!</button></a>
+
+                        </div>
+                        <!-- right side div -->
+                        <div class="col-md-6 col-12 main_header_right">
+
+                            <div id="slider-1" class="hcg-slider">
+                                <div class="hcg-slide-container">
+                                    <div class="hcg-slider-body">
+                                        <a class="hcg-slides animated" style="display:block">
+                                            <span class="hcg-slide-number">1/5</span>
+                                            <img src="https://html-generator.com/uploads/images/2022/08/05/9558596U3K78SBK.png"
+                                                alt="9558596U3K78SBK.png">
+                                            <span class="hcg-slide-text">9558596U3K78SBK.png</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main header end -->
+        <%- include('component/footer') %>
+</body>
+<%- include('component/scriptSlider1Link') %>
+
+</html>

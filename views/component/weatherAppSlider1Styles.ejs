@@ -1,0 +1,67 @@
+<style>
+    
+
+/* **************slider-1************ */
+
+#slider-1 .hcg-slide-container {
+    width: auto;
+    height: auto;
+}
+
+.hcg-slider {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hcg-slide-container {
+    max-width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.hcg-slides {
+    display: none;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hcg-slides img {
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    border-radius: 5px;
+    border: solid 1px #fff;
+    vertical-align: middle;
+}
+
+/************CSS Animation***********/
+
+.animated {
+    animation-name: swashIn;
+    animation-duration: 2s;
+}
+
+@keyframes swashIn {
+    0% {
+        opacity: 0;
+        transform-origin: 50% 50%;
+        transform: scale(0, 0);
+    }
+
+    90% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(1, 1);
+    }
+
+    100% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(1, 1);
+    }
+}
+
+.swashIn {
+    animation-name: swashIn;
+}
+</style>

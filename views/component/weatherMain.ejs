@@ -1,0 +1,78 @@
+<script>
+    const typeCityName = document.getElementById('cityName')
+    const searchBtn = document.getElementById('submit_Btn')
+    const dayName = document.getElementById('day')
+    const todayDate = document.getElementById('today_date')
+    const getCity_name = document.getElementById('city_name')
+    const getTemp = document.getElementById('temp')
+    const getTemp_status = document.getElementById('temp_status')
+    const dataHide = document.querySelector('.middle_layer')
+
+    const getInfo = async (event) => {
+        event.preventDefault();
+
+        let inputTypeVal = typeCityName.value;
+        if (inputTypeVal === '') {
+            typeCityName.innerText = 'Please! Write the city name before search';
+            dataHide.classList.add('data_hide');
+
+        } else {
+            try {
+                let url = `https://api.openweathermap.org/data/2.5/weather?q=${inputTypeVal}&units=metric&appid=e1ba064d34407e614117a7570e1cb12a`;
+                const response = await fetch(url);
+                let getdata = await response.json()
+                let arrData = [getdata];
+                //tempInfo output here
+                getCity_name.innerText = `${arrData[0].name}, ${arrData[0].sys.country}`;
+                getTemp.innerText = arrData[0].main.temp;
+                const tempIcon = arrData[0].weather[0].main;
+
+                if (tempIcon == 'Clear') {
+                    getTemp_status.innerHTML = "<i class='fa-solid fa-sun' style='color:#f1c40f;'></i>"
+                } else if (tempIcon == 'Clouds') {
+                    getTemp_status.innerHTML = "<i class='fa-solid fa-clouds' style='color:#ecf0f1;'></i>"
+                } else if (tempIcon == 'Rain') {
+                    getTemp_status.innerHTML = "<i class='fa-solid fa-cloud-rain' style='color:#3498db;'></i>"
+                } else if (tempIcon == 'Smoke') {
+                    getTemp_status.innerHTML = "<i class='fa-solid fa-smoke' style='color:#7f8c8d;'></i>"
+
+                } else if (tempIcon == 'Drizzle') {
+                    getTemp_status.innerHTML = "<i class='fa-solid fa-cloud-drizzle' style='color:#95a5a6;'></i>"
+                } else {
+                    getTemp_status.innerHTML = "<i class='fa-solid fa-sun' style='color:#f1c40f;'></i>"
+                }
+                dataHide.classList.remove('data_hide');
+
+            } catch {
+                typeCityName.innerText = 'Please! Write the correct city name';
+                dataHide.classList.add('data_hide');
+            }
+        }
+    }
+    searchBtn.addEventListener('click', getInfo)
+
+    //day
+    const getCurrentDay = () => {
+        let weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+        const nowDate = new Date()
+        let todayDayName = weekDay[nowDate.getDay()]
+        return todayDayName;
+    }
+    getCurrentDay()
+
+    //date
+    const getCurrentDate = () => {
+        let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const nowDate = new Date()
+
+        let day = nowDate.getDate()
+        let month = months[nowDate.getMonth()]
+        let year = nowDate.getFullYear()
+        return ` ${day} ${month}, ${year}`;
+    }
+    getCurrentDate()
+    dayName.innerHTML = getCurrentDay();
+    todayDate.innerHTML = getCurrentDate();
+
+</script>
